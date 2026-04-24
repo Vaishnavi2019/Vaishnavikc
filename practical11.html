@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 APIs Demo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+}
+h1{
+    color: #333;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #555;
+    background: white;
+    padding: 10px;
+}
+#dragItem{
+    width: 100px;
+    padding: 10px;
+    background: royalblue;
+    color: white;
+    cursor: grab;
+    margin: auto;
+}
+button{
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+}
+input{
+    padding: 8px;
+    width: 220px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>HTML5 APIs Demonstration</h1>
+
+<!-- Drag and Drop -->
+<h2>1. Drag and Drop API</h2>
+<div class="container">
+    <div class="box">
+        <div id="dragItem" draggable="true" ondragstart="drag(event)">
+            Drag Me
+        </div>
+    </div>
+
+    <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Drop Here
+    </div>
+</div>
+
+<!-- Geolocation -->
+<h2>2. Geolocation API</h2>
+<button onclick="getLocation()">Get My Location</button>
+<p id="location"></p>
+
+<!-- Web Storage -->
+<h2>3. Web Storage API</h2>
+<input type="text" id="username" placeholder="Enter your name">
+<button onclick="saveData()">Save Name</button>
+<button onclick="showData()">Show Name</button>
+<p id="result"></p>
+
+<script>
+/* Drag and Drop */
+function allowDrop(ev){
+    ev.preventDefault();
+}
+
+function drag(ev){
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev){
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+/* Geolocation */
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("location").innerHTML = 
+        "Geolocation not supported.";
+    }
+}
+
+function showPosition(position){
+    document.getElementById("location").innerHTML =
+    "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+/* Web Storage */
+function saveData(){
+    let name = document.getElementById("username").value;
+    localStorage.setItem("username", name);
+    alert("Name Saved!");
+}
+
+function showData(){
+    let savedName = localStorage.getItem("username");
+    document.getElementById("result").innerHTML =
+    "Saved Name: " + savedName;
+}
+</script>
+
+</body>
+</html>
