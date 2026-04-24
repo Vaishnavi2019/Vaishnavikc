@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Mini Website</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#f8f9fa;
+}
+.hero{
+    background:linear-gradient(to right,#0d6efd,#6610f2);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
+footer{
+    background:#212529;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="#">MiniSite</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+
+<!-- Dropdown -->
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+Services
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">Web Design</a></li>
+<li><a class="dropdown-item" href="#">Development</a></li>
+<li><a class="dropdown-item" href="#">SEO</a></li>
+</ul>
+</li>
+
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+<h1>Welcome to Mini Website</h1>
+<p>Fully Responsive Bootstrap Website</p>
+
+<!-- Modal Button -->
+<button class="btn btn-light mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">
+Open Modal
+</button>
+</div>
+
+<!-- Breadcrumb -->
+<div class="container mt-4">
+<nav>
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Pages</a></li>
+<li class="breadcrumb-item active">Contact</li>
+</ol>
+</nav>
+</div>
+
+<!-- Responsive Layout -->
+<div class="container mt-4">
+<div class="row g-4">
+
+<div class="col-lg-6 col-md-12">
+<div class="card shadow p-3">
+<h3>About Us</h3>
+<p>
+We create responsive and attractive websites using Bootstrap.
+This layout adjusts for mobile, tablet, and desktop screens.
+</p>
+</div>
+</div>
+
+<!-- Form -->
+<div class="col-lg-6 col-md-12">
+<div class="card shadow p-3">
+<h3>Contact Form</h3>
+
+<form>
+<div class="mb-3">
+<label>Name</label>
+<input type="text" class="form-control" placeholder="Enter Name">
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" class="form-control" placeholder="Enter Email">
+</div>
+
+<div class="mb-3">
+<label>Message</label>
+<textarea class="form-control" rows="4"></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary w-100">
+Submit
+</button>
+</form>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title">Bootstrap Modal</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+This is a responsive modal popup window created using Bootstrap.
+</div>
+
+<div class="modal-footer">
+<button class="btn btn-secondary" data-bs-dismiss="modal">
+Close
+</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 MiniSite | Responsive Bootstrap Website</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
